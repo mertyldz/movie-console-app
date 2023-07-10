@@ -10,6 +10,7 @@ import java.util.Scanner;
 
 public class FilmService {
     CategoryService categoryService = new CategoryService();
+    PlatformService platformService = new PlatformService();
 
     public ArrayList<Film> filterFilmByCategory(Category category, List<Film> filmList) {
         ArrayList<Film> filteredFilms = new ArrayList<>();
@@ -87,9 +88,7 @@ public class FilmService {
             System.out.println("Filmin hangi kategorilerde olduğunu seçiniz:");
             while (filmCategoryKey) {
                 // print inserted films
-                for (int i = 0; i < categoryList.size(); i++) {
-                    System.out.println(i + 1 + "-" + categoryList.get(i));
-                }
+                categoryService.showCategories(categoryList);
                 System.out.println("0-Kaydet ve devam et");
                 // make choice
                 int categoryOption = HelperService.getIntInput("Kategori seçiminiz: ");
@@ -109,9 +108,7 @@ public class FilmService {
             System.out.println("Filmin hangi platformlarda yayınlandığını seçiniz:");
             while (filmPlatformKey) {
                 // print inserted platforms
-                for (int i = 0; i < platformList.size(); i++) {
-                    System.out.println(i + 1 + "-" + platformList.get(i));
-                }
+                platformService.showPlatforms(platformList);
                 System.out.println("0-Kaydet ve devam et");
                 // make choice
                 int platformOption = HelperService.getIntInput("Platform seçiminiz: ");
