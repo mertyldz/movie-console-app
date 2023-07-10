@@ -55,7 +55,6 @@ public class FilmService {
         return true;
     }
 
-    //filmlist?????????????
     public void addFilm(List<Category> categoryList, List<Platform> platformList, List<Film> filmList) {
         boolean addFilmKey = true;
         while (addFilmKey) {
@@ -131,5 +130,3 @@ public class FilmService {
         }
     }
 }
-
-
